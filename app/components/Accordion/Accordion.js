@@ -43,6 +43,7 @@ export default class Accordion extends Component {
     })
 
     dlElement.setAttribute('ref', this.ref)
+    dlElement.classList.add('Accordion')
 
     return dlElement
   }

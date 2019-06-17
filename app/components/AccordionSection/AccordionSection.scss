@@ -1,9 +1,18 @@
 .AccordionSection {
-  dd {
-    display: none;
+  &,
+  &--active {
+    font-family: 'Arial';
   }
 
-  &--active dd {
-    display: block;
+  &--active {
+    font-weight: 600;
+
+    & dd {
+      display: block;
+    }
+  }
+
+  dd {
+    display: none;
   }
 }

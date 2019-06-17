@@ -7,7 +7,11 @@ export default app => {
       ...newProps
     })
     const element = instance.render()
-    app.querySelector(`*[ref=${ref}]`).replaceWith(element)
+    const elementSelector = app.querySelector(`*[ref=${ref}]`)
+
+    if (elementSelector) {
+      elementSelector.replaceWith(element)
+    }
   }
 
   document.addEventListener('UpdateDOM', e => {
