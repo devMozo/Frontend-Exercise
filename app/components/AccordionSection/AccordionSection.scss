@@ -1,0 +1,9 @@
+.AccordionSection {
+  dd {
+    display: none;
+  }
+
+  &--active dd {
+    display: block;
+  }
+}

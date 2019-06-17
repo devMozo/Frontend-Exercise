@@ -10,14 +10,23 @@ export default class Component {
     this.props = props
   }
 
-  static updateAll(props) {}
-
   update(ref, props, instance) {
     const event = new CustomEvent('UpdateDOM', {
       detail: {
         ref,
         newProps: props,
         instance
+      }
+    })
+
+    document.dispatchEvent(event)
+  }
+
+  updateAll(props, classComponent) {
+    const event = new CustomEvent('UpdateAllDOM', {
+      detail: {
+        classComponent,
+        newProps: props
       }
     })
 

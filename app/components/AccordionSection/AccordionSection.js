@@ -16,6 +16,13 @@ export default class AccordionSection extends Component {
 
     wrapper.setAttribute('ref', this.ref)
     wrapper.addEventListener('click', () => {
+      super.updateAll(
+        {
+          active: false
+        },
+        AccordionSection.name
+      )
+
       super.update(
         this.ref,
         {

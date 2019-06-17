@@ -1,6 +1,8 @@
 import Accordion from './components/Accordion/Accordion'
 import AccordionItem from './models/AccordionItem'
 import MockSections from './mocks/sections.json'
+import handlerDOM from './services/handlerDOM'
+
 const app = document.getElementById('app')
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,16 +17,4 @@ document.addEventListener('DOMContentLoaded', () => {
   app.appendChild(accordion.render())
 })
 
-document.addEventListener('UpdateDOM', e => {
-  const { ref, newProps, instance } = e.detail
-
-  try {
-    instance.setProps(newProps)
-    const element = instance.render()
-    app.querySelector(`*[ref=${ref}]`).replaceWith(element)
-  } catch (err) {
-    console.log(
-      `We've had the following problem processing your component: ${err}`
-    )
-  }
-})
+handlerDOM(app)
