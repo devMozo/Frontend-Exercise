@@ -7,8 +7,8 @@ export default (initTitle, initContent) => {
   }
 
   const setTitle = newTitle => {
-    if (typeof title !== String) {
-      new Error('You must pass an string message')
+    if (typeof title !== 'string') {
+      throw Error('You must pass an string message')
     }
 
     title = newTitle
@@ -19,8 +19,8 @@ export default (initTitle, initContent) => {
   }
 
   const setContent = newContent => {
-    if (typeof content !== String) {
-      new Error('You must pass an HTML formatted to String')
+    if (typeof content !== 'string') {
+      throw Error('You must pass an HTML formatted to String')
     }
 
     content = newContent

@@ -4,7 +4,7 @@ import AccordionSectionTitle from '../AccordionSectionTitle/AccordionSectionTitl
 import AccordionSectionContent from '../AccordionSectionContent/AccordionSectionContent'
 
 export default class AccordionSection extends Component {
-  render() {
+  render () {
     const { title, content, active } = this.props
 
     const wrapper = document.createElement('div')

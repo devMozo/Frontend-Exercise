@@ -5,7 +5,7 @@ import Component from '../Component'
 import NewSection from '../../mocks/section.json'
 
 export default class Accordion extends Component {
-  async fetchAPI() {
+  async fetchAPI () {
     const newItem = AccordionItem(NewSection.title, NewSection.content)
 
     setTimeout(() => {
@@ -21,7 +21,7 @@ export default class Accordion extends Component {
     }, 4000)
   }
 
-  render() {
+  render () {
     const { elements, updated } = this.props
     const dlElement = document.createElement('dl')
 

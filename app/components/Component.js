@@ -1,16 +1,17 @@
+/* eslint-disable no-undef */
 import keys from '../utils/keys'
 
 export default class Component {
-  constructor(props) {
+  constructor (props) {
     this.props = props
     this.ref = keys()
   }
 
-  setProps(props) {
+  setProps (props) {
     this.props = props
   }
 
-  update(ref, props, instance) {
+  update (ref, props, instance) {
     const event = new CustomEvent('UpdateDOM', {
       detail: {
         ref,
@@ -22,7 +23,7 @@ export default class Component {
     document.dispatchEvent(event)
   }
 
-  updateAll(props, classComponent) {
+  updateAll (props, classComponent) {
     const event = new CustomEvent('UpdateAllDOM', {
       detail: {
         classComponent,
